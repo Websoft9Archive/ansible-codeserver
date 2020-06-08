@@ -4,7 +4,7 @@ After=nginx.service
 
 [Service]
 Type=simple
-Environment=PASSWORD="123456"
+Environment=PASSWORD=123456
 ExecStart=/usr/local/bin/code-server --host 127.0.0.1 --user-data-dir /var/lib/code-server --auth password
 Restart=always
 

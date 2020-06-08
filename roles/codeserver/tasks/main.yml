@@ -32,7 +32,7 @@
     state: directory 
     owner: codeserver 
     group: codeserver
-    mode: g+w
+    mode: '0755'
 
 - name: Setting codeserver service
   template:
@@ -44,21 +44,12 @@
     systemctl enable code-server
     systemctl restart code-server
 
-- name: Create codeserver System User
-  user:
-    name: codeserver 
-    create_home: no 
-    home: /opt/codeserver
-    shell: /usr/sbin/nologin
-
-
-
 
 # set soft link, -f enforce the exist links
 # ln -sf src des
-#- name: set soft link
-#  shell: |
-#    ln -sf /usr/local/bin/code-server  /data/wwwroot
+- name: set soft link
+  shell: |
+    ln -sf /var/lib/code-server/logs  /data/codeserver
 
 
 # check service state
