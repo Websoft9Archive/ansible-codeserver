@@ -26,13 +26,13 @@
     cd code-server2.1692-vsc1.39.2-linux-x86_64
     cp code-server /usr/local/bin
 
-    - name: Create the storage directory for files.
+- name: Create the storage directory for files.
   file:
-      path: /var/lib/code-server
-      state: directory 
-      owner: codeserver 
-      group: codeserver
-      mode: g+w
+    path: /var/lib/code-server
+    state: directory 
+    owner: codeserver 
+    group: codeserver
+    mode: g+w
 
 - name: Setting codeserver service
   template:
@@ -46,10 +46,10 @@
 
 - name: Create codeserver System User
   user:
-      name: codeserver 
-      create_home: no 
-      home: /opt/codeserver
-      shell: /usr/sbin/nologin
+    name: codeserver 
+    create_home: no 
+    home: /opt/codeserver
+    shell: /usr/sbin/nologin
 
 
 
