@@ -11,7 +11,7 @@ jdk_version: "8"
 
 
 # port for java/nodejs...  8080 | 3000
-nginx_reverse_proxy_port:8080
+nginx_reverse_proxy_port: 8080
 
 # default listen port of default.conf
 nginx_listen_port: "80"
