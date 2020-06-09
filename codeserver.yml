@@ -14,7 +14,6 @@
   roles:
     - {role: role_common, tags: "role_common"}  
     - {role: role_jdk, tags: "role_jdk"}  
-    - {role: role_nginx, tags: "role_nginx"}  
     - {role: codeserver, tags: "codeserver"}
 
 

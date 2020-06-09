@@ -10,14 +10,5 @@ codeserver_db_password: "123456"
 jdk_version: "8" 
 
 
-# port for java/nodejs...  8080 | 3000
-nginx_reverse_proxy_port: 8080
-
-# default listen port of default.conf
-nginx_listen_port: "80"
-
-# nginx username and password swith True|False
-# default credentials is admin/admin
-nginx_htpasswd: False
 
 

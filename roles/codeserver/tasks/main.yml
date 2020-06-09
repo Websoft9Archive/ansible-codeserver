@@ -20,7 +20,8 @@
     
 - name: Download&Setup codeserver
   shell: |
-    cd /data/codeserver
+    mkdir: /opt/vscode  
+    cd /opt/vscode  
     curl -LO {{codeserver_download_url}}
     tar -xzvf code-server2.1692-vsc1.39.2-linux-x86_64.tar.gz
     cd code-server2.1692-vsc1.39.2-linux-x86_64
