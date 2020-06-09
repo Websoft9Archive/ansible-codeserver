@@ -41,6 +41,7 @@
 
 - name: Restart codeserver
   shell: |
+    systemctl daemon-reload
     systemctl enable code-server
     systemctl restart code-server
 
