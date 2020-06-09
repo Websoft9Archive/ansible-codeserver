@@ -22,8 +22,8 @@
   shell: |
     cd /data/codeserver    
     curl -LO {{codeserver_download_url}}
-    tar -xzvf code-server2.1692-vsc1.39.2-linux-x86_64.tar.gz
-    cd code-server2.1692-vsc1.39.2-linux-x86_64
+    tar -xzvf code-server-3.4.1-linux-x86_64.tar.gz
+    cd code-server-3.4.1-linux-x86_64
     cp code-server /usr/local/bin
 
 - name: Create the storage directory for files.
