@@ -92,7 +92,10 @@ netstat -nl|grep 61616          #查看默认端口
 
 输入日志中生成的密码即可登录
 
-![image-20200421164901802](C:\Users\w9\AppData\Roaming\Typora\typora-user-images\image-20200421164901802.png)
+```
+docker exec -it code-server /bin/bash
+cat ~/.config/code-server/config.yaml
+```
 
 #### 本项目需要开启哪些端口？
 
