@@ -1,17 +1,17 @@
 # Start or Stop the Services
 
-These commands you must know when you using the RabbitMQ of Websoft9
+These commands are required when you use the code-server of Websoft9.
 
-### RabbitMQ
+### code-server
 
 ```shell
-sudo systemctl start rabbitmq-server
-sudo systemctl stop rabbitmq-server
-sudo systemctl restart rabbitmq-server
-sudo systemctl status rabbitmq-server
+sudo systemctl start codeserver-server
+sudo systemctl stop codeserver-server
+sudo systemctl restart codeserver-server
+sudo systemctl status codeserver-server
 
-# you can use this debug mode if RabbitMQ service can't run
-rabbitmq-server console
+# you can use this debug mode if code-server service can't run
+codeserver-server console
 ```
 
 ### MySQL
@@ -26,8 +26,34 @@ sudo systemctl status mysql
 ### Redis
 
 ```shell
-systemctl start redis
-systemctl stop redis
-systemctl restart redis
-systemctl status redis
+sudo systemctl start redis
+sudo systemctl stop redis
+sudo systemctl restart redis
+sudo systemctl status redis
+```
+
+### Docker
+```shell
+sudo systemctl start docker
+sudo systemctl stop docker
+sudo systemctl restart docker
+sudo systemctl status docker
+```
+
+### phpMyAdmin on Docker
+```shell
+sudo docker inspect phpmyadmin
+sudo docker start phpmyadmin
+sudo docker restart phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker rm phpmyadmin
+```
+
+### ONLYOFFICE Document Server on Docker
+```shell
+sudo docker inspect onlyofficedocumentserver
+sudo docker start onlyofficedocumentserver
+sudo docker restart onlyofficedocumentserver
+sudo docker stop onlyofficedocumentserver
+sudo docker rm onlyofficedocumentserver
 ```

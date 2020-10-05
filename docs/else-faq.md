@@ -1,35 +1,35 @@
 # FAQ
 
-#### How can I enable the debug mode of RabbitMQ service?
+#### How can I enable the debug mode of code-server service?
 
 ```
-systemctl stop rabbitmq-server
-rabbitmq-server console
+systemctl stop codeserver-server
+codeserver-server console
 ```
 
-#### Can I reset password of RabbitMQ by command?
+#### Can I reset password of code-server by command?
 
-Yes, e.g `rabbitmqctl change_password  admin newpassword`
+Yes, e.g `codeserverctl change_password  admin newpassword`
 
-#### If there is no domain name, can I deploy RabbitMQ?
+#### If there is no domain name, can I deploy code-server?
 
-Yes, visit RabbitMQ by *http://Internet IP:8161*
+Yes, access code-server by *http://Internet IP:8161*.
 
 #### What is the password for the database root user?
 
-The password is stored in the server related file: `/credentials/password.txt`
+The password is stored in the server related file `/credentials/password.txt`.
 
-#### Is there a web-base GUI database management tools?
+#### Is there a web-base GUI database management tool?
 
-Yes, phpMyAdmin is on it, visit by *http://Internet IP/phpmyadmin*
+Yes, phpMyAdmin is included. Visit by *http://Internet IP:9090*.
 
-#### Is it possible to modify the source path of RabbitMQ?
+#### Is it possible to modify the source path of code-server?
 
-No
+No.
 
-#### How to change the permissions of filesytem?
+#### How to change the permissions of filesystem?
 
-Change owner(group) or permissions like below:
+Change owner(group) or permissions as below:
 
 ```shell
 chown -R apache.apache /data/wwwroot
@@ -39,7 +39,7 @@ find /data/wwwroot -type f -exec chmod 640 {} \;
 
 #### What's the difference between Deployment and Installation?
 
-- Deployment is a process of installing and configuring a sequence of software in sequence in a different order, which is a complex system engineering.  
+- Deployment is a process of installing and configuring a series of software to the server in a different order, which is a complex system engineering.  
 - Installation is the process of starting the initial wizard after the application is prepared.  
 - Installation is simpler than deployment. 
 
@@ -49,4 +49,4 @@ Cloud platform refers to platform manufacturers that provide cloud computing ser
 
 #### What is the difference between Instance, Cloud Server, Virtual Machine, ECS, EC2, CVM, and VM?
 
-No difference, just the terminology used by different manufacturers, actually cloud servers
+No difference. All refer to cloud servers. They are the different terminology used by manufacturers.

@@ -1,33 +1,38 @@
 # FAQ
 
-#### 如何以调试模式启动RabbitMQ服务？
+#### code-server 是 Microsoft 开发的吗？
 
-```
-systemctl stop rabbitmq-server
-rabbitmq-server console
-```
+不是，它是由一家名为[CODER](https://coder.com/)的公司开发的
 
-#### 是否可以通过命令行修改RabbitMQ后台密码？
+#### code-server 支持多账号吗？
 
-可以，`rabbitmqctl change_password  admin newpassword`
+不支持
 
-#### 如果没有域名是否可以部署 RabbitMQ？
+#### code-server 支持扩展安装吗？
+
+支持
+
+#### 是否可以通过命令行修改code-server后台密码？
+
+可以，`codeserverctl change_password  admin newpassword`
+
+#### 如果没有域名是否可以部署 code-server？
+
+可以，访问`http://服务器公网IP` 即可
 
 #### 数据库 root 用户对应的密码是多少？
 
 密码存放在服务器相关文件中：`/credentials/password.txt`
 
-可以，访问`http://服务器公网IP` 即可
-
 #### 是否有可视化的数据库管理工具？
 
-有，内置phpMyAdmin，访问地址：*http://服务器公网IP/phpmyadmin*
+有，内置phpMyAdmin，访问地址：*http://服务器公网IP:9090*
 
 #### 如何禁止外界访问phpMyAdmin？
 
 连接服务器，编辑 [phpMyAdmin 配置文件](/zh/stack-components.md#phpmyadmin)，将其中的 `Require all granted` 更改为 `Require ip 192.160.1.0`，然后重启 Apache 服务
 
-#### 是否可以修改RabbitMQ的源码路径？
+#### 是否可以修改code-server的源码路径？
 
 不可以
 

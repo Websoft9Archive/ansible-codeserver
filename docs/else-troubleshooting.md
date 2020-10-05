@@ -1,23 +1,23 @@
 # Troubleshooting
 
-We collect the most common troubleshooting of using RabbitMQ for your reference:
+If you're having trouble with running code-server, here is a quick guide to solve most common problems.
 
-> Instance troubleshooting is closely related to the Instance provider that is Cloud Platform, refer to [Cloud Platform Documentation](https://support.websoft9.com/docs/faq/tech-instance.html)
+> Most faults about the Instance is closely related to the Instance provider, Cloud Platform. Provided you're sure the fault is caused by Cloud Platform, refer to [Cloud Platform Documentation](https://support.websoft9.com/docs/faq/tech-instance.html).
 
-#### How can I use the logs?
+#### How can I check the error logs?
 
 You can find the keywords **Failed** or **error** from the logs directory: `/data/logs`
 
-#### RabbitMQ service can't start?
+#### Can't start code-server service?
 
-Insufficient disk space, insufficient memory, and configuration file errors can make service could not be started  
+Insufficient disk space and memory, incorrect configuration file may cause the failure to start the service. 
 
 It is recommended to first check through the command.
 
 ```shell
-# restart RabbitMQ service
-systemctl status rabbitmq
-journalctl -u rabbitmq
+# restart code-server service
+systemctl status codeserver
+journalctl -u codeserver
 
 # view disk space
 df -lh
@@ -28,6 +28,6 @@ free -lh
 
 #### Error in Chrome when modify password?
 
-This error is not attribute to RabbitMQ server, once you have upgraded you local Chrome, it solved
+This error has nothing to do with code-server server. Just upgrade you local Chrome to solve it.
 
-![chrome error of RabbitMQ](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rabbitmq/rabbitmq-chromeerror-websoft9.png)
+![chrome error of code-server](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-chromeerror-websoft9.png)

@@ -4,18 +4,18 @@ home: false
 
 # 关于
 
-本文档由 [Websoft9](https://www.websoft9.com/) 公司提供，用于指导用户学习 RabbitMQ 的安装部署与基本运维技术，包括：RabbitMQ部署、初始化安装、环境配置、HTTPS、SMTP、备份升级和连接云服务器操作等基本操作。
+本文档由 [Websoft9](https://www.websoft9.com/) 公司提供，用于指导用户学习 code-server 的安装部署与基本运维技术，包括：code-server部署、初始化安装、环境配置、HTTPS、SMTP、备份升级和连接云服务器操作等基本操作。
 
-[RabbitMQ](https://www.rabbitmq.com) 流行的开源消息队列系统，用erlang语言开，是AMQP（高级消息队列协议）的标准实现。用于在分布式系统中存储转发消息，在易用性、扩展性、高可用性等方面表现不俗。
+[code-server](https://github.com/cdr/code-server) 是一个由第三方公司开发的浏览器版本的 VS Code，可以直接通过浏览器进行开发，由于后端运行在服务器中，其运行效率高的同时又非常便捷。
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/rabbitmq/rabbitmq-gui-websoft9.png)
+![code-server 界面](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-consolegui-websoft9.png)
 
 ---
 
 ## 改进
 
 本文档会持续改进，广泛吸收用户的需求。  
-如果您有好的想法，请点击页面下方**在Github上编辑** 给我们反馈，欢迎Fork我们在[Github上的项目](https://github.com/Websoft9/ansible-rabbitmq)。
+如果您有好的想法，请点击页面下方**在Github上编辑** 给我们反馈，欢迎Fork我们在[Github上的项目](https://github.com/Websoft9/ansible-codeserver)。
 
 ## 赞助
 

@@ -4,14 +4,14 @@ sidebarDepth: 3
 
 # 参数
 
-RabbitMQ 预装包包含 RabbitMQ 运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
+code-server 预装包包含 code-server 运行所需一序列支撑软件（简称为“组件”），下面列出主要组件名称、安装路径、配置文件地址、端口、版本等重要的信息。
 
 ## 路径
 
-### RabbitMQ
+### code-server
 
-RabbitMQ 安装目录： */data/rabbitmq*  
-RabbitMQ 日志目录： */data/logs/rabbitmq*  
+code-server 安装目录： */data/codeserver*  
+code-server 日志目录： */data/logs/codeserver*  
 
 ### Nginx
 
@@ -20,7 +20,7 @@ Nginx 主配置文件： */etc/nginx/nginx.conf*
 Nginx 日志文件： */var/log/nginx*  
 Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
 
-### MYSQL
+### MySQL
 
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
@@ -35,7 +35,7 @@ MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 15672 | 通过 HTTP 访问 RabbitMQ 控制台 | 可选 |
+| HTTP | 15672 | 通过 HTTP 访问 code-server 控制台 | 可选 |
 | TCP | 5672 | epmd | 可选 |
 | TCP | 55672 | Erlang distribution | 可选 |
 
@@ -63,6 +63,6 @@ docker -v
 yum info erlang
 apt show erlang
 
-# RabbitMQ version
-rabbitmqctl status | grep RabbitMQ*
+# code-server version
+codeserverctl status | grep code-server*
 ```
