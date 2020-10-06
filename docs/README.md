@@ -6,7 +6,7 @@ home: false
 
 This documentation is provided by [Websoft9](https://www.websoft9.com/). It can help users to acquire skills of code-server Deployment, Installation, Configuration, HTTPS,  Backup, Upgrade, Connect Instance and more.
 
-[code-server](https://codeserver-server.apache.org/) is the most widely deployed open source message broker. With more than 35,000 production deployments of code-server world-wide at small startups and large enterprises, code-server is the most popular open source message broker.
+[code-server](https://github.com/cdr/code-server) is a web based IDE, it help you run VS Code on any machine anywhere and access it in the browser. It is also server-powered that take advantage of large cloud servers to speed up tests, compilations, downloads, and more.
 
 ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-consolegui-websoft9.png)
 

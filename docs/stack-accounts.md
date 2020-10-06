@@ -10,12 +10,16 @@ Here are the required username and password for code-server image installation a
 
 * code-server administrator username: `admin`
 * code-server administrator password: Get it form the file of your server */credentials/password.txt*
-  > If there no password.txt exist, the administrator password is `admin`
 
 ## MySQL
 
 * MySQL administrator username: `root`
 * MySQL administrator password: Get it from the file of your server */credentials/password.txt*  
+
+## MongoDB
+
+* MongoDB administrator username: `root`
+* MongoDB administrator password: Get it from the file of your server */credentials/password.txt*  
 
 ## Linux
 

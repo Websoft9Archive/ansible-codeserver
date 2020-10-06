@@ -57,8 +57,8 @@ Different Cloud Platforms' snapshot settings slightly differ. Refer to [Cloud pl
 ```
 The general steps to make a manual backup are as follows:
 
-1. Compress and download the entire directory */data/wwwroot* by SFTP.
-2. Export LAMP's database by [phpMyAdmin](/admin-mysql.md).
+1. Compress and download the entire directory */data/wwwroot/codeserver* by SFTP.
+2. Export database by [phpMyAdmin](/admin-mysql.md) when need.
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/phpmyadmin/phpmyadmin-export-websoft9.png)
 3. Put the source code file and database file in the same folder, and name it according to the date.
 4. Complete a backup.

@@ -6,8 +6,13 @@ The code-server deployment package contains a sequence of software (referred to 
 
 ### code-server
 
-code-server installation directory:  */data/codeserver*  
-code-server logs directory:  */data/logs/codeserver*  
+本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
+
+code-server 安装目录： */data/wwwroot/codeserver*  
+code-server 日志目录： */data/wwwroot/codeserver/config/data/logs*  
+code-server docker-compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
+code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
+code-server Extension 目录： */data/wwwroot/codeserver/config/extensions*  
 
 ### Nginx
 
@@ -21,7 +26,28 @@ Nginx rewrite rules directory: */etc/nginx/conf.d/rewrite*
 MySQL installation directory: */usr/local/mysql*  
 MySQL data directory: */data/mysql*  
 MySQL configuration file: */etc/my.cnf*    
-MySQL Web Management URL: *http://Internet IP/9panel*, get credential from [Username and Password](/stack-accounts.md)
+MySQL 可视化管理参考本文档 [MySQL](/admin-mysql.md) 章节。
+
+### phpMyAdmin
+
+phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+
+phpMyAdmin directory：*/data/apps/phpmyadmin*  
+phpMyAdmin docker-compose file：*/data/apps/phpmyadmin/docker-compose.yml*  
+
+### MongoDB
+
+MongoDB 数据目录: */var/lib/mongodb*  
+MongoDB 配置文件: */etc/mongod.conf*  
+MongoDB 日志文件: */var/log/mongodb*  
+MongoDB 可视化管理参考本文档 [MongoDB](/admin-mongodb.md) 章节。
+
+#### adminMongo
+
+adminMongo 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+
+adminMongo directory： */data/apps/adminmongo*  
+adminMongo docker-compose file：*/data/apps/adminmongo/docker-compose.yml*  
 
 ## Ports
 
@@ -36,9 +62,9 @@ The following are the ports you may use:
 | TCP | 80 | HTTP to access code-server | Required |
 | TCP | 443 | HTTPS to access code-server | Optional |
 | TCP | 3306 | Remote to access MySQL | Optional |
-| TCP | 9003 | Use port to access code-server | Optional |
-| TCP | 9002 | code-server Document Server on Docker | Optional |
+| TCP | 27017 | Remote to access MongoDB | Optional |
 | TCP | 9090 | phpMyAdmin on Docker | Optional |
+| TCP | 9091 | adminMongo on Docker | Optional |
 
 
 ## Version

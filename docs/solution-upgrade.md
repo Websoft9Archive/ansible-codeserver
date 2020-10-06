@@ -26,4 +26,16 @@ yum update -y --skip-broken
 
 ## Upgrade code-server
 
-Refer to the official docs: [Upgrading code-server](https://www.codeserver.com/upgrade.html)
+升级之前请确保您已经完成了备份
+
+1. 检查 */data/wwwroot/codeserver/docker-compose.yml* 文件是否满足最新版本要求
+2. 重新运行 docker-compose 编排文件
+    ```
+    cd /data/wwwroot/codeserver
+    docker-compose pull
+    docker-compose up -d
+    ```
+3. 如果有文件权限问题，请运行如下命令
+   ```
+   chown -R docker:docker /data/wwwroot/codeserver/config/workspace
+   ```

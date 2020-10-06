@@ -25,7 +25,7 @@
 
 5. 根据需要进入 code-server 容器[配置所需的环境](/zh/solution-runtime.md)
 
-> 需要了解更多 code-server 的使用，请参考官方文档：[code-server Documentation](https://www.codeserver.com/documentation.html)
+> 需要了解更多 code-server 的使用，请参考官方文档：[code-server Documentation](https://hub.docker.com/r/linuxserver/code-server)
 
 ## 常见问题
 

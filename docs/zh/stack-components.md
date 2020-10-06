@@ -13,9 +13,10 @@ code-server 预装包包含 code-server 运行所需一序列支撑软件（简�
 本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
 
 code-server 安装目录： */data/wwwroot/codeserver*  
-code-server docker compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
+code-server 日志目录： */data/wwwroot/codeserver/config/data/logs*  
+code-server docker-compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
 code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
-code-server 扩展目录： */data/wwwroot/codeserver/config/extensions*  
+code-server Extension 目录： */data/wwwroot/codeserver/config/extensions*  
 
 ### Nginx
 
@@ -35,8 +36,8 @@ MySQL 可视化管理参考本文档 [MySQL](/zh/admin-mysql.md) 章节。
 
 phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
 
-phpMyAdmin directory：*/data/apps/phpmyadmin*  
-phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml*  
+phpMyAdmin 应用目录：*/data/apps/phpmyadmin*  
+phpMyAdmin docker-compose 文件：*/data/apps/phpmyadmin/docker-compose.yml*  
 
 ### MongoDB
 
@@ -49,7 +50,7 @@ MongoDB 可视化管理参考本文档 [MongoDB](/zh/admin-mongodb.md) 章节。
 
 adminMongo 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
 
-adminMongo directory：*/data/apps/adminmongo*  
+adminMongo 应用目录：*/data/apps/adminmongo*  
 adminMongo docker compose file：*/data/apps/adminmongo/docker-compose.yml*  
 
 ## 端口号

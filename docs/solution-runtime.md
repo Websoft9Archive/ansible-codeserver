@@ -1,23 +1,29 @@
-# SMTP
+# Setup develop runtime
 
-Sending mail is a common feature for code-server. With a large number of users' practice and feedback, only one way is recommended, that is, using the **third-party SMTP service** to send the email.
+code-server 容器默认已经运行 Node，可以很方便的配合 code-server 进行 Node 相关程序的开发。  
 
-> Do not try to install **Sendmail** or other Mail server software on your Cloud Server for sending mail, because it has great difficulty in maintenance.
+如果默认环境不符合您的需求，可以通过如下三个步骤配置您所需的环境：
 
-Taking **SendGrid's SMTP Service** as an example, refer to the following steps to configure sending mail:
-
-1. Log in SendGrid console, and prepare your SMTP settings.
+1. 在服务器上运行如下的命令，进入 coder-server 容器
    ```
-   SMTP host: smtp.sendgrid.net
-   SMTP port: 25 or 587 for unencrypted/TLS email, 465 for SSL-encrypted email
-   SMTP Authentication: must be checked
-   SMTP Encryption: must SSL
-   SMTP username: websoft9smtp
-   SMTP password: #fdfwwBJ8f    
+   sudo docker exec -it codeserver bash 
    ```
-2. Log in code-server Console.
-3. Enter the SMTP settings.
-![Metabase SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/en/metabase/metabase-smtp-websoft9.png)
-4. Click the **Test Connection**. You will get the feedback *"no errors were..."* if SMTP is valid.
+2. 在容器中运行安装命令，配置所需的运行环境（以安装 JRE 为例）
+   ```
+   #1 apt更新
+   sudo apt update
 
-More SMTP Service(Gmail, Hotmail, QQ mail, Yahoo mail, SendGrid and so on)  settings or Issues with SMTP, please refer to Websoft9's *[SMTP Guide](https://support.websoft9.com/docs/faq/tech-smtp.html)*
+   #2 安装JRE
+   apt-get install openjdk-8-jre
+
+   #3 测试java
+   java -version
+   ```
+3. Ctrl+D 退出容器，然后再服务器中运行如下命令基于当前容器创建镜像
+   ```
+   #1 创建镜像
+   sudo docker commit -m "add java" -a "your name" codeserver codeserver2:latest
+
+   #2 查看镜像
+   sudo docker image ls
+   ```

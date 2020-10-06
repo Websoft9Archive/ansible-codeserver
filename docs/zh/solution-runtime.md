@@ -1,4 +1,4 @@
-# 配置环境
+# 配置开发环境
 
 code-server 容器默认已经运行 Node，可以很方便的配合 code-server 进行 Node 相关程序的开发。  
 
