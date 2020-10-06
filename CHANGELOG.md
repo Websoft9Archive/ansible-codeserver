@@ -2,17 +2,15 @@
 
 ## To do
 
-1. 可视化管理工具
-2. AmazonLinux支持
+1. Devops
 
 ## Logs
 
 ### Bug Fixes
 
-* 2020-02-14  rabbitmq-version版本输出
-* 2020-02-13  rabbitmq-version版本输出
+* 2020-10-14  
 
 ### Features
 
-* 2020-02-14  增加GUI工具
-* 2020-02-13  增加2.8版本
+* 2010-10-06  support MySQL, MongoDB
+* 2020-10-06  created Docker version
