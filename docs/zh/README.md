@@ -4,7 +4,7 @@ home: false
 
 # 关于
 
-本文档由 [Websoft9](https://www.websoft9.com/) 公司提供，用于指导用户学习 code-server 的安装部署与基本运维技术，包括：code-server部署、初始化安装、环境配置、HTTPS、SMTP、备份升级和连接云服务器操作等基本操作。
+本文档由 [Websoft9](https://www.websoft9.com/) 公司提供，用于指导用户学习 code-server 的安装部署与基本运维技术，包括：code-server部署、初始化安装、HTTPS、开发环境配置、备份升级和连接云服务器操作等基本操作。
 
 [code-server](https://github.com/cdr/code-server) 是一个由第三方公司开发的浏览器版本的 VS Code，可以直接通过浏览器进行开发，由于后端运行在服务器中，其运行效率高的同时又非常便捷。
 

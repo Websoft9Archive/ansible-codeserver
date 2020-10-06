@@ -4,7 +4,7 @@ home: false
 
 # Overview
 
-This documentation is provided by [Websoft9](https://www.websoft9.com/). It can help users to acquire skills of code-server Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
+This documentation is provided by [Websoft9](https://www.websoft9.com/). It can help users to acquire skills of code-server Deployment, Installation, Configuration, HTTPS,  Backup, Upgrade, Connect Instance and more.
 
 [code-server](https://codeserver-server.apache.org/) is the most widely deployed open source message broker. With more than 35,000 production deployments of code-server world-wide at small startups and large enterprises, code-server is the most popular open source message broker.
 

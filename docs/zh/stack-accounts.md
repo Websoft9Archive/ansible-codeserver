@@ -8,13 +8,11 @@
 
 ## code-server
 
-* 管理员账号: `admin`
-* 管理员密码: `admin` 或 存储在您的服务器中的文件中 */credentials/password.txt*  
-
-## MySQL
-
-* 管理员账号：*`root`*
-* 管理员密码：存储在您的服务器中的文件中 */credentials/password.txt*  
+* 管理员账号: `无`
+* 管理员密码: 存储在您的服务器中的文件中 */credentials/password.txt*，也可以通过下面的命令获取
+  ```
+  sudo docker exec -i codeserver sudo cat /home/coder/.config/code-server/config.yaml
+  ```  
 
 ## Linux
 

@@ -10,8 +10,11 @@ code-server 预装包包含 code-server 运行所需一序列支撑软件（简�
 
 ### code-server
 
-code-server 安装目录： */data/codeserver*  
-code-server 日志目录： */data/logs/codeserver*  
+本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
+
+code-server 安装目录： */data/wwwroot/codeserver*  
+code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
+code-server 扩展目录： */data/wwwroot/codeserver/config/extensions*  
 
 ### Nginx
 
@@ -25,7 +28,14 @@ Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
 MySQL 配置文件: */etc/my.cnf*    
-MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+
+### phpMyAdmin
+
+phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+
+phpMyAdmin directory：*/data/apps/phpmyadmin*  
+phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml*  
 
 ## 端口号
 
