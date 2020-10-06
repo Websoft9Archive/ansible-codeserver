@@ -1,22 +1,36 @@
-#全局
 region: "0"
 
-# codeserver variable
+common_os_support: ["CentOS", "Ubuntu", "Amazon", "OracleLinux"]
 
-codeserver_db_name: codeserver
-codeserver_db_user: codeserver
-codeserver_db_password: "123456"
+nginx_reverse_proxy_port: 9011
+nginx_vhost_mode: "reverse"
 
-jdk_version: "8" 
+mysql_version: "5.7" 
+mysql_root_password: "123456" 
+mysql_remote: True
 
+mongodb_server: "community"
+mongodb_version: "4.0"    
+mongodb_root_password: "123456"
+mongodb_root_username: "root"
 
-# port for java/nodejs...  8080 | 3000
-nginx_reverse_proxy_port: 8080
+docker_applications: 
+  - adminmongo
+  - phpmyadmin
+  - codeserver
 
-# default listen port of default.conf
-nginx_listen_port: "80"
+init_db: 
+  mongodb:
+    admin: root
+    password: "123456"
+  
+  mysql:
+    admin: root
+    password: "123456"
 
-# nginx username and password swith True|False
-# default credentials is admin/admin
-nginx_htpasswd: False
-
+init_docker:
+  seafile:
+    admin_username: admin
+    admin_password: "123456"
+    service_after: "docker.service"
+    compose_path: "/data/docker-compose.yml"

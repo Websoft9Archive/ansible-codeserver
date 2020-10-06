@@ -1,6 +1,6 @@
 # MongoDB
 
-Rocket.Chat deployment package includes MongoDB and Web-GUI tool phpMyAdmin for MongoDB management, refer to these steps to use it:
+code-server deployment package includes MongoDB and Web-GUI tool phpMyAdmin for MongoDB management, refer to these steps to use it:
 
 1. Log in Cloud Console, make sure the **TCP:9091** port is allowed on **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)**
 2. Using the Chrome or FireFox to visit URL *http://Internet IP:9091*

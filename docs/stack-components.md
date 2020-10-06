@@ -55,16 +55,15 @@ lsb_release -a
 # Nginx  Version
 nginx -V
 
-# Java version
-java -v
-
 # Docker Version
 docker -v
 
-# erlang  Version
-yum info erlang
-apt show erlang
+# MySQL  Version
+mysql -V
+
+# MongoDB version
+mongodb -V
 
 # code-server version
-codeserverctl status | grep code-server*
+docker inspect -f '{{ index .Config.Labels "build_version" }}' codeserver
 ```

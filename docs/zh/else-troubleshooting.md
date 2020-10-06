@@ -14,20 +14,20 @@
 建议先通过命令进行排查  
 
 ```shell
+# 查看 code-server 容器运行日志
+sudo docker log codeserver
+
 # 查看磁盘空间
 df -lh
 
 # 查看内存使用
 free -lh
-
-# 查看服务状态和日志
-systemctl status codeserver
-journalctl -u codeserver
 ```
 
-#### 在Chrome下修改密码后报错？
+#### code-server 在线创建文件权限不足？
 
-这个并不是服务器端的问题，只要更新浏览器即可。
-
-![chrome error of code-server](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-chromeerror-websoft9.png)
+如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
+```
+chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+```
 

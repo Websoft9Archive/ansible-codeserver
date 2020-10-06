@@ -35,12 +35,12 @@
 
 #### 本部署方案中 code-server 是如何安装的？
 
-本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
+本部署方案中的 code-server 基于 Docker 安装，实现开发环境与宿主机隔离。
 
 #### code-server 创建文件出现文件权限不足的问题？
 
 如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
 
 ```
-chown -R docker.docker /data/local/codeserver/project
+chown -R docker.docker /data/wwwroot/codeserver/config/workspace
 ```

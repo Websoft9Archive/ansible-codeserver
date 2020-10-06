@@ -13,6 +13,7 @@ code-server 预装包包含 code-server 运行所需一序列支撑软件（简�
 本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
 
 code-server 安装目录： */data/wwwroot/codeserver*  
+code-server docker compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
 code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
 code-server 扩展目录： */data/wwwroot/codeserver/config/extensions*  
 
@@ -28,7 +29,7 @@ Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
 MySQL 配置文件: */etc/my.cnf*    
-MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+MySQL 可视化管理参考本文档 [MySQL](/zh/admin-mysql.md) 章节。
 
 ### phpMyAdmin
 
@@ -37,17 +38,34 @@ phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Dock
 phpMyAdmin directory：*/data/apps/phpmyadmin*  
 phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml*  
 
+### MongoDB
+
+MongoDB 数据目录: */var/lib/mongodb*  
+MongoDB 配置文件: */etc/mongod.conf*  
+MongoDB 日志文件: */var/log/mongodb*  
+MongoDB 可视化管理参考本文档 [MongoDB](/zh/admin-mongodb.md) 章节。
+
+### adminMongo
+
+adminMongo 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+
+adminMongo directory：*/data/apps/adminmongo*  
+adminMongo docker compose file：*/data/apps/adminmongo/docker-compose.yml*  
+
 ## 端口号
 
 在云服务器中，通过 **[安全组设置](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** 来控制（开启或关闭）端口是否可以被外部访问。 
 
 通过命令`netstat -tunlp` 看查看相关端口，下面列出可能要用到的端口：
 
-| 名称 | 端口号 | 用途 |  必要性 |
+| 类型 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 15672 | 通过 HTTP 访问 code-server 控制台 | 可选 |
-| TCP | 5672 | epmd | 可选 |
-| TCP | 55672 | Erlang distribution | 可选 |
+| TCP | 80 | 通过 HTTP 访问 code-server 控制台 | 必须 |
+| TCP | 443 | 通过 HTTPS 访问 code-server 控制台 | 可选 |
+| TCP | 9090 | 通过 HTTP 访问 phpMyAdmin | 可选 |
+| TCP | 3306 | MySQL 端口 | 可选 |
+| TCP | 9091 | 通过 HTTP 访问 adminMongo | 可选 |
+| TCP | 27017 | MongoDB 端口 | 可选 |
 
 ## 版本号
 
@@ -63,16 +81,15 @@ lsb_release -a
 # Nginx  Version
 nginx -V
 
-# Java version
-java -v
-
 # Docker Version
 docker -v
 
-# erlang  Version
-yum info erlang
-apt show erlang
+# MySQL  Version
+mysql -V
+
+# MongoDB version
+mongodb -V
 
 # code-server version
-codeserverctl status | grep code-server*
+docker inspect -f '{{ index .Config.Labels "build_version" }}' codeserver
 ```

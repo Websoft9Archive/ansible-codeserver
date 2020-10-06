@@ -6,15 +6,19 @@
 
 #### code-server 支持多账号吗？
 
-不支持
+不支持，但我们在本部署包中提供了曲线[解决方案](/zh/solution-more.md#多开发者协同)
 
 #### code-server 支持扩展安装吗？
 
 支持
 
-#### 是否可以通过命令行修改code-server后台密码？
+#### 如何退出 code-server 界面？
 
-可以，`codeserverctl change_password  admin newpassword`
+暂时没有找到退出界面
+
+#### 是否可以通过命令行修改 code-server 后台密码？
+
+不支持
 
 #### 如果没有域名是否可以部署 code-server？
 
@@ -26,24 +30,30 @@
 
 #### 是否有可视化的数据库管理工具？
 
-有，内置phpMyAdmin，访问地址：*http://服务器公网IP:9090*
+内置 phpMyAdmin，访问地址：*http://服务器公网IP:9090*
+内置 adminMongo*http://服务器公网IP:9091*
 
-#### 如何禁止外界访问phpMyAdmin？
+#### 如何禁止外界访问phpMyAdmin 和 adminMongo？
 
-连接服务器，编辑 [phpMyAdmin 配置文件](/zh/stack-components.md#phpmyadmin)，将其中的 `Require all granted` 更改为 `Require ip 192.160.1.0`，然后重启 Apache 服务
+可以关闭安全组 9090 和 9091 端口，也可以通过下面的命令停止服务
+
+```
+sudo docker stop phpmyadmin
+sudo docker stop adminmongo
+```
 
 #### 是否可以修改code-server的源码路径？
 
-不可以
+可以，通过修改 [docker-compose 文件](/zh/stack-components.md#code-server)实现
 
 #### 如何修改上传的文件权限?
 
 ```shell
 # 拥有者
-chown -R apache.apache /data/wwwroot/
+chown -R docker.docker /data/wwwroot/codeserver
 # 读写执行权限
-find /data/wwwroot/ -type d -exec chmod 750 {} \;
-find /data/wwwroot/ -type f -exec chmod 640 {} \;
+find /data/wwwroot/codeserver -type d -exec chmod 750 {} \;
+find /data/wwwroot/codeserver -type f -exec chmod 640 {} \;
 ```
 
 #### 部署和安装有什么区别？
