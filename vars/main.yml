@@ -36,4 +36,4 @@ init_docker:
     service_after: "docker.service"
     compose_path: "/data/apps/codeserver/docker-compose.yml"
     compose_commands:
-      - 'sed -i "s/123456/$new_password/g" /data/apps/codeserver/docker-compose.yml'
+      - 'sudo sed -i "s/123456/$new_password/g" /data/apps/codeserver/docker-compose.yml'
