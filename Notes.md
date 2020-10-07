@@ -10,3 +10,5 @@ docker exec -i codeserver sudo cat /home/coder/.config/code-server/config.yaml
 它比官方提供的镜像更方便自定义配置
 
 #### 无法通过 Nginx 转发后登录访问？
+
+这个取决于 Nginx 的配置，参考：https://github.com/cdr/code-server/blob/master/doc/guide.md#nginx
