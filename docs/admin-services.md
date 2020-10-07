@@ -5,13 +5,49 @@ These commands are required when you use the code-server of Websoft9.
 ### code-server
 
 ```shell
-sudo systemctl start codeserver-server
-sudo systemctl stop codeserver-server
-sudo systemctl restart codeserver-server
-sudo systemctl status codeserver-server
+sudo docker start codeserver
+sudo docker stop codeserver
+sudo docker restart codeserver
+sudo docker stats codeserver
 
-# you can use this debug mode if code-server service can't run
-codeserver-server console
+# you can run the CMD in the code-server container by this way
+sudo docker exec -it codeserver bash
+```
+
+### phpMyAdmin
+
+```shell
+sudo docker start phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker restart phpmyadmin
+sudo docker stats phpmyadmin
+```
+
+### adminMongo
+
+```shell
+sudo docker start adminmongo
+sudo docker stop adminmongo
+sudo docker restart adminmongo
+sudo docker stats adminmongo
+```
+
+### Docker
+
+```shell
+sudo systemctl start docker
+sudo systemctl stop docker
+sudo systemctl restart docker
+sudo systemctl status docker
+```
+
+### Nginx
+
+```shell
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
 ```
 
 ### MySQL
@@ -23,37 +59,11 @@ sudo systemctl restart mysql
 sudo systemctl status mysql
 ```
 
-### Redis
+### MongoDB
 
 ```shell
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl restart redis
-sudo systemctl status redis
-```
-
-### Docker
-```shell
-sudo systemctl start docker
-sudo systemctl stop docker
-sudo systemctl restart docker
-sudo systemctl status docker
-```
-
-### phpMyAdmin on Docker
-```shell
-sudo docker inspect phpmyadmin
-sudo docker start phpmyadmin
-sudo docker restart phpmyadmin
-sudo docker stop phpmyadmin
-sudo docker rm phpmyadmin
-```
-
-### ONLYOFFICE Document Server on Docker
-```shell
-sudo docker inspect onlyofficedocumentserver
-sudo docker start onlyofficedocumentserver
-sudo docker restart onlyofficedocumentserver
-sudo docker stop onlyofficedocumentserver
-sudo docker rm onlyofficedocumentserver
+sudo systemctl start mongod
+sudo systemctl restart mongod
+sudo systemctl stop mongodd
+sudo systemctl status mongod
 ```

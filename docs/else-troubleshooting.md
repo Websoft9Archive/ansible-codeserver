@@ -15,9 +15,8 @@ Insufficient disk space and memory, incorrect configuration file may cause the f
 It is recommended to first check through the command.
 
 ```shell
-# restart code-server service
-systemctl status codeserver
-journalctl -u codeserver
+# 查看 code-server 容器运行日志
+sudo docker log codeserver
 
 # view disk space
 df -lh
@@ -26,8 +25,9 @@ df -lh
 free -lh
 ```
 
-#### Error in Chrome when modify password?
+#### code-server 在线创建文件权限不足？
 
-This error has nothing to do with code-server server. Just upgrade you local Chrome to solve it.
-
-![chrome error of code-server](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-chromeerror-websoft9.png)
+如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
+```
+chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+```

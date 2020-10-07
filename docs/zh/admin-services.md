@@ -1,17 +1,53 @@
 # 服务启停
 
-使用由Websoft9提供的 code-server 部署方案，可能需要用到的服务如下：
+使用由 Websoft9 提供的 code-server 部署方案，可能需要用到的服务如下：
 
 ### code-server
 
 ```shell
-sudo systemctl start codeserver-server
-sudo systemctl stop codeserver-server
-sudo systemctl restart codeserver-server
-sudo systemctl status codeserver-server
+sudo docker start codeserver
+sudo docker stop codeserver
+sudo docker restart codeserver
+sudo docker stats codeserver
 
-# you can use this debug mode if code-server service can't run
-codeserver-server console
+# you can run the CMD in the code-server container by this way
+sudo docker exec -it codeserver bash
+```
+
+### phpMyAdmin
+
+```shell
+sudo docker start phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker restart phpmyadmin
+sudo docker stats phpmyadmin
+```
+
+### adminMongo
+
+```shell
+sudo docker start adminmongo
+sudo docker stop adminmongo
+sudo docker restart adminmongo
+sudo docker stats adminmongo
+```
+
+### Docker
+
+```shell
+sudo systemctl start docker
+sudo systemctl stop docker
+sudo systemctl restart docker
+sudo systemctl status docker
+```
+
+### Nginx
+
+```shell
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
 ```
 
 ### MySQL
@@ -23,11 +59,11 @@ sudo systemctl restart mysql
 sudo systemctl status mysql
 ```
 
-### Redis
+### MongoDB
 
 ```shell
-systemctl start redis
-systemctl stop redis
-systemctl restart redis
-systemctl status redis
+sudo systemctl start mongod
+sudo systemctl restart mongod
+sudo systemctl stop mongodd
+sudo systemctl status mongod
 ```
