@@ -8,6 +8,6 @@
     shell: sudo sh -c "echo 'need test' 1>> /data/test"
 
 - name: Check codeserver Service
-  shell: docker ps | grep codeserver | grep Active*
+  shell: docker inspect codeserver | grep Status
   register: check_codeserver_service
   notify: check_codeserver_service
