@@ -2,6 +2,7 @@ region: "0"
 
 common_os_support: ["CentOS", "Ubuntu", "Amazon", "OracleLinux"]
 
+nginx_appname: "codeserver"
 nginx_reverse_proxy_port: "8443"
 nginx_vhost_mode: "reverse"
 
