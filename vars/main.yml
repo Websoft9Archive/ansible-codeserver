@@ -29,8 +29,8 @@ init_db:
     password: "123456"
 
 init_docker:
-  seafile:
-    admin_username: admin
+  codeserver:
+    admin_username: nouser
     admin_password: "123456"
     service_after: "docker.service"
     compose_path: "/data/docker-compose.yml"
