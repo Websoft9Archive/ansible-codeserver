@@ -36,4 +36,10 @@ proxy_set_header Connection upgrade;
 proxy_set_header Accept-Encoding gzip;
 ```
 
+docker安装时，安装其他环境无源的解决方式，例如安装jdk1.8
+```
+sudo apt update
+sudo apt install openjdk-8-jdk 
+```
+
 这三行其什么作用，还需进一步研究 Nginx
