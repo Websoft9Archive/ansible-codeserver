@@ -36,7 +36,7 @@ proxy_set_header Connection upgrade;
 proxy_set_header Accept-Encoding gzip;
 ```
 
-docker安装时，安装其他环境无源的解决方式，例如安装jdk1.8
+使用docker版codeserver时，安装某些环境（例如安装jdk1.8）无源，怎么解决？
 ```
 sudo apt update
 sudo apt install openjdk-8-jdk 
