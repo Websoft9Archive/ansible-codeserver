@@ -38,8 +38,9 @@ proxy_set_header Accept-Encoding gzip;
 
 使用docker版codeserver时，安装某些环境（例如安装jdk1.8）无源，怎么解决？
 ```
-sudo apt update
-sudo apt install openjdk-8-jdk 
+sudo su
+apt update
+apt install openjdk-8-jdk 
 ```
 
 这三行其什么作用，还需进一步研究 Nginx
