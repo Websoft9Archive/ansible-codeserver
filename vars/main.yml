@@ -1,9 +1,7 @@
 region: "0"
 
-common_os_support: ["CentOS", "Ubuntu", "Amazon", "OracleLinux"]
-
 nginx_appname: "codeserver"
-nginx_reverse_proxy_port: "8443"
+nginx_reverse_proxy_port: "9001"
 nginx_vhost_mode: "reverse"
 
 mysql_version: "5.7" 
@@ -34,6 +32,6 @@ init_docker:
     admin_username: nouser
     admin_password: "123456"
     service_after: "docker.service"
-    compose_path: "/data/apps/codeserver/docker-compose.yml"
+    compose_path: "/data/apps/codeserver/.env"
     compose_commands:
-      - 'sudo sed -i "s/123456/$new_password/g" /data/apps/codeserver/docker-compose.yml'
+      - 'sudo sed -i "s/123456/$new_password/g" /data/apps/codeserver/.env'
