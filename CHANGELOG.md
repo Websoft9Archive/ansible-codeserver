@@ -1,16 +1,5 @@
 # CHANGELOG
 
-## To do
-
-1. Devops
-
-## Logs
-
-### Bug Fixes
-
-* 2020-10-14  
-
-### Features
-
-* 2010-10-06  support MySQL, MongoDB
-* 2020-10-06  created Docker version
+## CodeServer v3.10.2-1 2021-5-26
+### Fixes and Enhancements
+- please update to the 3.10.2 #1
