@@ -1,6 +1,6 @@
 # DevOps
 
-本项目以 Docker 为应用安装的平台，用户可以安装更多 DevOps 原生 Docker 应用：
+本部署方案默认已经安装 Docker，用户可以基于 Docker 安装 更多的 DevOps 原生应用，包括：
 
 * Jenkins
 * Gitlab

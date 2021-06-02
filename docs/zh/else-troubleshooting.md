@@ -28,6 +28,6 @@ free -lh
 
 如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
 ```
-chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+chown -R docker.docker /data/wwwroot/codeserver/volumes/config/workspace
 ```
 

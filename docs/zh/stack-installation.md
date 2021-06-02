@@ -18,12 +18,39 @@
 
 3. 在 code-server 界面上打开 workspace 文件夹  
    ![code-server 打开项目目录](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-openfolder-websoft9.png)
-   > 默认存放代码的根目录为：*/data/wwwroot/codeserver/config/workspace*  
+   > 默认存放代码的根目录为：*/data/wwwroot/codeserver/volumes/config/workspace*  
 
 4. 打开 Terminal，查看系统环境（默认已安装 Node, Yarn等）
    ![code-server 打开Terminal](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-terminal-websoft9.png)
 
-5. 根据需要进入 code-server 容器[配置所需的环境](/zh/solution-runtime.md)
+5. 参考[配置环境](/zh/solution-runtime.md)章节，安装更多开发所需的组件。
+
+## code-server 入门向导
+
+下面以 Python 开发为范例，介绍如何使用 code-server：
+
+1. 登录 code-server，在当前 WorkSpace 下克隆一个代码仓库
+   ```
+   git clone https://github.com/Websoft9/ansible-wordpress.git
+   ```
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-gitclone-websoft9.png)
+
+2. 在项目文件夹中新建一个文件，命名为：myfile.py，并拷贝下面的 Python 程序实例代码。
+   ```
+   #!/usr/bin/env python2
+   #!/usr/bin/env python3
+   #coding: utf-8
+
+   import os, io, sys
+
+   print("hello world")
+   ```
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-createfile-websoft9.png)
+
+3. 在【窗口的终端栏】中执行 `python myfile.py` 命令，运行 Python 程序
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/codeserver/codeserver-runpython-websoft9.png)
+
+4. 查看正确的输出结果
 
 > 需要了解更多 code-server 的使用，请参考官方文档：[code-server Documentation](https://hub.docker.com/r/linuxserver/code-server)
 
@@ -42,5 +69,5 @@
 如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
 
 ```
-chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+chown -R docker.docker /data/wwwroot/codeserver/volumes/config/workspace
 ```

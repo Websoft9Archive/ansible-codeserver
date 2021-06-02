@@ -15,7 +15,7 @@ Insufficient disk space and memory, incorrect configuration file may cause the f
 It is recommended to first check through the command.
 
 ```shell
-# 查看 code-server 容器运行日志
+# Look over the code-server logs
 sudo docker log codeserver
 
 # view disk space
@@ -25,9 +25,10 @@ df -lh
 free -lh
 ```
 
-#### code-server 在线创建文件权限不足？
+#### Insufficient file permissions for files created by code-server?
 
-如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
+You can run below command to solve file permission issue
+
 ```
-chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+chown -R docker.docker /data/wwwroot/codeserver/volumes/config/workspace
 ```
