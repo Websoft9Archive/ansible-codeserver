@@ -6,7 +6,7 @@
 
 #### code-server 支持多账号吗？
 
-不支持，但我们在本部署包中提供了曲线[解决方案](/zh/solution-more.md#多开发者协同)
+不支持，但我们在本部署包中提供了[多开发者方案](/zh/solution-more.md#多开发者)
 
 #### code-server 支持扩展安装吗？
 
@@ -14,7 +14,7 @@
 
 #### 如何退出 code-server 界面？
 
-暂时没有找到退出界面
+打开控制台左上角菜单，点击【Log out】即可退出
 
 #### 是否可以通过命令行修改 code-server 后台密码？
 
@@ -33,7 +33,7 @@
 内置 phpMyAdmin，访问地址：*http://服务器公网IP:9090*
 内置 adminMongo*http://服务器公网IP:9091*
 
-#### 如何禁止外界访问phpMyAdmin 和 adminMongo？
+#### 如何禁止外界访问 phpMyAdmin 和 adminMongo？
 
 可以关闭安全组 9090 和 9091 端口，也可以通过下面的命令停止服务
 

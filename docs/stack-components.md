@@ -4,15 +4,17 @@ The code-server deployment package contains a sequence of software (referred to 
 
 ## Path
 
+This solution use Docker to deploy all service, you can run the command `docker ps` to list them.  
+
 ### code-server
 
-本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
+code-server directory： */data/wwwroot/codeserver*  
+code-server logs directory: */data/wwwroot/codeserver/volumes/config/data/logs*  
+code-server workspace: */data/wwwroot/codeserver/volumes/config/workspace*  
+code-server Extension directory: */data/wwwroot/codeserver/volumes/config/extensions*  
+code-server docker-compose file: */data/wwwroot/codeserver/docker-compose.yml*  
 
-code-server 安装目录： */data/wwwroot/codeserver*  
-code-server 日志目录： */data/wwwroot/codeserver/config/data/logs*  
-code-server docker-compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
-code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
-code-server Extension 目录： */data/wwwroot/codeserver/config/extensions*  
+> The **.env** file at code-server directory include the port,password settings
 
 ### Nginx
 
@@ -25,29 +27,35 @@ Nginx rewrite rules directory: */etc/nginx/conf.d/rewrite*
 
 MySQL installation directory: */usr/local/mysql*  
 MySQL data directory: */data/mysql*  
-MySQL configuration file: */etc/my.cnf*    
-MySQL 可视化管理参考本文档 [MySQL](/admin-mysql.md) 章节。
+MySQL configuration file: */etc/my.cnf*  
+
+MySQL Web Management refer to [MySQL Management](/admin-mysql.md)
 
 ### phpMyAdmin
 
-phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+phpMyAdmin is a visual MySQL management tool, is installed based on docker.  
 
 phpMyAdmin directory：*/data/apps/phpmyadmin*  
-phpMyAdmin docker-compose file：*/data/apps/phpmyadmin/docker-compose.yml*  
+phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
 
 ### MongoDB
 
-MongoDB 数据目录: */var/lib/mongodb*  
-MongoDB 配置文件: */etc/mongod.conf*  
-MongoDB 日志文件: */var/log/mongodb*  
-MongoDB 可视化管理参考本文档 [MongoDB](/admin-mongodb.md) 章节。
+MongoDB data directory: */var/lib/mongodb*  
+MongoDB Configuration File:  */etc/mongod.conf*  
+MongoDB logs File:  */var/log/mongodb*  
 
-#### adminMongo
+### adminMongo
 
-adminMongo 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。
+adminMongo is a visual MongoDB management tool, is installed based on docker.  
 
-adminMongo directory： */data/apps/adminmongo*  
-adminMongo docker-compose file：*/data/apps/adminmongo/docker-compose.yml*  
+Docker root directory: */var/lib/docker*  
+Docker image directory: */var/lib/docker/image*  
+
+### Docker
+
+Docker root directory: */var/lib/docker*  
+Docker image directory: */var/lib/docker/image*   
+Docker daemon.json: please create it when you need and save to to the directory */etc/docker*   
 
 ## Ports
 

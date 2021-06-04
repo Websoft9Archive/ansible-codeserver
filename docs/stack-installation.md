@@ -16,14 +16,19 @@ If you have completed the code-server deployment, follow the steps below to star
 2. Log in code-server web console. ([Don't have password?](/stack-accounts.md#codeserver)) 
    ![code-server console websoft9](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-consolegui-websoft9.png)
 
-3. 在 code-server 界面上打开 workspace 文件夹  
-   ![code-server 打开项目目录](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-openfolder-websoft9.png)
-   > 默认存放代码的根目录为：*/data/wwwroot/codeserver/config/workspace*  
+3. Open the WorkSpace directory at **code-server** console
+   ![code-server directory](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-openfolder-websoft9.png)
 
-4. 打开 Terminal，查看系统环境（默认已安装 Node, Yarn等）
-   ![code-server 打开Terminal](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-terminal-websoft9.png)
+   > Default workspace directory is: */data/wwwroot/codeserver/volumes/config/workspace*  
 
-5. 根据需要进入 code-server 容器[配置所需的环境](/solution-runtime.md)
+4. Open the 【Terminal】windows, run the `node` command, you can view the its version
+   ![code-server open Terminal](https://libs.websoft9.com/Websoft9/DocsPicture/en/codeserver/codeserver-terminal-websoft9.png)
+
+5. You can install more software by yourself, refer to: [Set Develop Runtime](/solution-runtime.md)
+
+## code-server Setup Wizard
+
+Coming soon...
 
 > More guide about code-server, please refer to [code-server Documentation](https://hub.docker.com/r/linuxserver/code-server).
 
@@ -33,14 +38,14 @@ If you have completed the code-server deployment, follow the steps below to star
 
 Your TCP:80 of Security Group Rules is not allowed, so there is no response from Chrome or Firefox.
 
-#### 本部署方案中 code-server 是如何安装的？
+#### How can this code-server deploy?
 
-本部署方案中的 code-server 基于 Docker 安装，实现开发环境与宿主机隔离。
+Deploy by Docker, every developer can set different runtime 
 
-#### code-server 创建文件出现文件权限不足的问题？
+#### Insufficient file permissions for files created by code-server?
 
-如果上传的文件存在一些文件权限需要修正。运行如下命令即可解决文件权限问题：
+You can run below command to solve file permission issue
 
 ```
-chown -R docker.docker /data/wwwroot/codeserver/config/workspace
+chown -R docker.docker /data/wwwroot/codeserver/volumes/config/workspace
 ```

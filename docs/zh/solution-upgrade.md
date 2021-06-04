@@ -22,18 +22,23 @@ yum update -y --skip-broken
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 
 
-## code-server升级
+## code-server 升级
 
-升级之前请确保您已经完成了备份
+code-server 基于 Docker 部署，其升级流程：拉取镜像 > 删除容器 > 重建容器
 
-1. 检查 */data/wwwroot/codeserver/docker-compose.yml* 文件是否满足最新版本要求
-2. 重新运行 docker-compose 编排文件
+> 升级之前请确保您已经完成了服务器的镜像（快照）备份
+
+1. 登录服务器，编辑 */data/wwwroot/codeserver/.env* 文件，将版本变量的值修改为目标版本号
+
+2. 拉取目标版本的镜像
+   ```
+   cd /data/wwwroot/codeserver
+   docker-compose pull
+   ```
+   > 如果显示没有镜像可拉取，则无需升级
+
+3. 删除旧容器，重新创建 code-server 容器
     ```
-    cd /data/wwwroot/codeserver
-    docker-compose pull
+    docker-compose down -v
     docker-compose up -d
     ```
-3. 如果有文件权限问题，请运行如下命令
-   ```
-   chown -R docker:docker /data/wwwroot/codeserver/config/workspace
-   ```

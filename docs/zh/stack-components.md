@@ -13,10 +13,19 @@ code-server 预装包包含 code-server 运行所需一序列支撑软件（简�
 本部署方案中的 code-server 基于容器安装，实现开发环境与宿主机隔离。
 
 code-server 安装目录： */data/wwwroot/codeserver*  
-code-server 日志目录： */data/wwwroot/codeserver/config/data/logs*  
+code-server 日志目录： */data/wwwroot/codeserver/volumes/config/data/logs*  
+code-server 工作目录： */data/wwwroot/codeserver/volumes/config/workspace*  
+code-server Extension 目录： */data/wwwroot/codeserver/volumes/config/extensions*  
 code-server docker-compose 文件： */data/wwwroot/codeserver/docker-compose.yml*  
-code-server 工作目录： */data/wwwroot/codeserver/config/workspace*  
-code-server Extension 目录： */data/wwwroot/codeserver/config/extensions*  
+
+> code-server 安装目录下的 .env 文件包含端口、后台密码等变量
+
+### Docker
+
+Docker 根目录: */var/lib/docker*  
+Docker 镜像目录: */var/lib/docker/image*   
+Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下根据需要自行创建  
+
 
 ### Nginx
 
@@ -29,8 +38,9 @@ Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
 
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
-MySQL 配置文件: */etc/my.cnf*    
-MySQL 可视化管理参考本文档 [MySQL](/zh/admin-mysql.md) 章节。
+MySQL 配置文件: */etc/my.cnf*  
+
+> MySQL 可视化管理参考本文档 [MySQL](/zh/admin-mysql.md) 章节。
 
 ### phpMyAdmin
 
@@ -44,7 +54,8 @@ phpMyAdmin docker-compose 文件：*/data/apps/phpmyadmin/docker-compose.yml*
 MongoDB 数据目录: */var/lib/mongodb*  
 MongoDB 配置文件: */etc/mongod.conf*  
 MongoDB 日志文件: */var/log/mongodb*  
-MongoDB 可视化管理参考本文档 [MongoDB](/zh/admin-mongodb.md) 章节。
+
+> MongoDB 可视化管理参考本文档 [MongoDB](/zh/admin-mongodb.md) 章节。
 
 ### adminMongo
 

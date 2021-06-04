@@ -1,28 +1,24 @@
 # FAQ
 
-#### code-server 是 Microsoft 开发的吗？
+#### code-server is powered by Microsoft?
 
-不是，它是由一家名为 [CODER](https://coder.com/) 的公司开发的
+No, is powered by [CODER](https://coder.com/)
 
-#### code-server 支持多账号吗？
+#### Does code-server support multiple accounts?
 
-不支持，但我们在本部署包中提供了曲线[解决方案](/zh/solution-more.md#多开发者协同)
+No, but you can deploy multiple code-server for different user, refer to: [解决方案](/solution-more.md#multi-developer)
 
-#### code-server 支持扩展安装吗？
+#### Can I install extension for code-server?
 
-支持
-
-#### 如何退出 code-server 界面？
-
-暂时没有找到退出界面
+Yes
 
 #### Can I reset password of code-server by command?
 
-No
+No, you should reset password by re-create code-server container
 
 #### If there is no domain name, can I deploy code-server?
 
-Yes, access code-server by *http://Cloud Server Internet IP*.
+Yes, access code-server by *http://Cloud Server's Internet IP*.
 
 #### What is the password for the database root user?
 
@@ -30,12 +26,12 @@ The password is stored in the server related file `/credentials/password.txt`
 
 #### Is there a web-base GUI database management tool?
 
-内置 phpMyAdmin，访问地址：*http://服务器公网IP:9090*
-内置 adminMongo*http://服务器公网IP:9091*
+* phpMyAdmin for MySQL, access it by: *http://Cloud Server's Internet IP:9090*
+* adminMongo for MongoDB, access it by: *http:///Cloud Server's Internet IP:9091*
 
-#### 如何禁止外界访问phpMyAdmin 和 adminMongo？
+#### How to disable phpMyAdmin and adminMongo for Internet user?
 
-可以关闭安全组 9090 和 9091 端口，也可以通过下面的命令停止服务
+You should disable the 9090 and 9091 port at security group of Cloud console, and you can stop the services also
 
 ```
 sudo docker stop phpmyadmin
@@ -44,7 +40,7 @@ sudo docker stop adminmongo
 
 #### Is it possible to modify the source path of code-server?
 
-可以，通过修改 [docker-compose 文件](/zh/stack-components.md#code-server)实现
+Yes, modify it by the [docker-compose file](/stack-components.md#code-server)
 
 #### How to change the permissions of filesystem?
 

@@ -26,16 +26,19 @@ yum update -y --skip-broken
 
 ## Upgrade code-server
 
-升级之前请确保您已经完成了备份
+This deployment solution is based on Docker and so you can upgrade code-server by the standard process of Docker:  
 
-1. 检查 */data/wwwroot/codeserver/docker-compose.yml* 文件是否满足最新版本要求
-2. 重新运行 docker-compose 编排文件
-    ```
-    cd /data/wwwroot/codeserver
-    docker-compose pull
-    docker-compose up -d
-    ```
-3. 如果有文件权限问题，请运行如下命令
+> You should complete an image or snapshot backup for instance before upgrade
+
+1. Use **SFTP** to login Server, modify **APP_VERSION** in the **.env** file of RabbitMQ directory
+
+2. Go to the code-server root directory, then pull new images
    ```
-   chown -R docker:docker /data/wwwroot/codeserver/config/workspace
+   cd /data/wwwroot/codeserver
+   docker-compose pull
+   ```
+3. Delete old container and recreate new container
+   ```
+   docker-compose down -v
+   docker-compose up -d
    ```
