@@ -16,6 +16,7 @@ mongodb_root_username: "root"
 docker_applications: 
   - adminmongo
   - phpmyadmin
+  - codeserver
 
 init_db: 
   mongodb:
