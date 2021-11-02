@@ -12,6 +12,8 @@ mongodb_server: "community"
 mongodb_version: "4.4"    
 mongodb_root_password: "123456"
 mongodb_root_username: "root"
+mongodb_authentication: True
+mongodb_remote: True
 
 docker_applications: 
   - adminmongo
